@@ -1,29 +1,6 @@
 package application;
 
-class Conta {
-	int numero;
-	String titular;
-	double saldo;
-	
-	public Conta(int numero, String titular, double saldo) {
-		this.numero = numero;
-		this.titular = titular;
-		this.saldo = saldo;
-	}
-	
-	boolean sacar(double quantidade) {
-		if(this.saldo < quantidade)
-			return	false;
-		else {
-			this.saldo -= quantidade;
-			return true;
-		}
-	}
-	
-	void depositar(double quantidade) {
-		this.saldo += quantidade;
-	}
-}
+import entities.Conta;
 
 public class Main {
 	
@@ -36,7 +13,9 @@ public class Main {
 			System.out.println("Saque não realizado: conta sem fundos!!!");
 		c1.depositar(200.0);
 		
-		System.out.println("Saldo da conta de " + c1.titular + ": R$ " + c1.saldo);
+		// System.out.println("Saldo da conta de " + c1.titular + ": R$ " + c1.saldo);
+		System.out.println("Saldo da conta de " + c1.getTitular() + ": R$ " + c1.getSaldo());
+		
 	}
 
 }
