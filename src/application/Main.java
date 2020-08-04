@@ -5,6 +5,12 @@ class Conta {
 	String titular;
 	double saldo;
 	
+	public Conta(int numero, String titular, double saldo) {
+		this.numero = numero;
+		this.titular = titular;
+		this.saldo = saldo;
+	}
+	
 	boolean sacar(double quantidade) {
 		if(this.saldo < quantidade)
 			return	false;
@@ -22,10 +28,8 @@ class Conta {
 public class Main {
 	
 	public static void main(String[] args) {
-		Conta c1 = new Conta();
-		
-		c1.titular = "Fulano de Tal";
-		c1.saldo = 1000.0;
+		Conta c1 = new Conta(1234, "Fulano de Tal", 1000.0);
+
 		if(c1.sacar(500.0))
 			System.out.println("Saque realizado com sucesso");
 		else
