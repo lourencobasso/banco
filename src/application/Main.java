@@ -5,9 +5,13 @@ class Conta {
 	String titular;
 	double saldo;
 	
-	void sacar(double quantidade) {
-		double novoSaldo = this.saldo - quantidade;
-		this.saldo = novoSaldo;
+	boolean sacar(double quantidade) {
+		if(this.saldo < quantidade)
+			return	false;
+		else {
+			this.saldo -= quantidade;
+			return true;
+		}
 	}
 	
 	void depositar(double quantidade) {
@@ -22,7 +26,10 @@ public class Main {
 		
 		c1.titular = "Fulano de Tal";
 		c1.saldo = 1000.0;
-		c1.sacar(500.0);
+		if(c1.sacar(500.0))
+			System.out.println("Saque realizado com sucesso");
+		else
+			System.out.println("Saque não realizado: conta sem fundos!!!");
 		c1.depositar(200.0);
 		
 		System.out.println("Saldo da conta de " + c1.titular + ": R$ " + c1.saldo);
