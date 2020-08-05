@@ -2,10 +2,10 @@ package entities;
 
 public class Conta {
 	private int numero;
-	private String titular;
+	private Cliente titular;
 	private double saldo;
 	
-	public Conta(int numero, String titular, double saldo) {
+	public Conta(int numero, Cliente titular, double saldo) {
 		this.numero = numero;
 		this.titular = titular;
 		this.saldo = saldo;
@@ -24,6 +24,18 @@ public class Conta {
 		this.saldo += quantidade;
 	}
 
+	public boolean transferirPara(Conta destino, double valor) {
+		boolean retirou = this.sacar(valor);
+		if (retirou == false) {
+			// não deu pra sacar!
+			return false;
+		}
+		else {
+			destino.depositar(valor);
+			return true;
+		}
+	}
+	
 	public int getNumero() {
 		return numero;
 	}
@@ -32,11 +44,11 @@ public class Conta {
 		this.numero = numero;
 	}
 
-	public String getTitular() {
+	public Cliente getTitular() {
 		return titular;
 	}
 
-	public void setTitular(String titular) {
+	public void setTitular(Cliente titular) {
 		this.titular = titular;
 	}
 
