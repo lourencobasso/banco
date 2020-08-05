@@ -13,7 +13,6 @@ public class Main {
 			System.out.println("Saque não realizado: conta sem fundos!!!");
 		c1.depositar(200.0);
 		
-		// System.out.println("Saldo da conta de " + c1.titular + ": R$ " + c1.saldo);
 		System.out.println("Saldo da conta de " + c1.getTitular() + ": R$ " + c1.getSaldo());
 		
 	}
