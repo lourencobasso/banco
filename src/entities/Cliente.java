@@ -1,9 +1,9 @@
 package entities;
 
 public class Cliente {
-	String nome;
-	String email;
-	String cpf;
+	private String nome;
+	private String email;
+	private String cpf;
 	public Cliente(String nome, String email, String cpf) {
 		this.nome = nome;
 		this.email = email;
@@ -23,8 +23,5 @@ public class Cliente {
 	}
 	public String getCpf() {
 		return cpf;
-	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
 	}
 }
