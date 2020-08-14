@@ -17,5 +17,6 @@ public class Main {
 
 		System.out.println("Saldo da conta de " + c1.getTitular().getNome() + ": R$ " + c1.getSaldo());	
 		System.out.println("Saldo da conta de " + c2.getTitular().getNome() + ": R$ " + c2.getSaldo());	
+		System.out.println("Número total de clientes: " + Cliente.getTotalDeClientes());
 	}
 }
